@@ -2,10 +2,13 @@ package com.srhdp.ProductService.service;
 
 import com.srhdp.ProductService.entity.Product;
 import com.srhdp.ProductService.model.ProductRequest;
+import com.srhdp.ProductService.model.ProductResponse;
 import com.srhdp.ProductService.repository.ProductRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import static org.springframework.beans.BeanUtils.copyProperties;
 
 @Service
 @Log4j2
@@ -27,5 +30,22 @@ public class ProductServiceImpl implements ProductService{
         productRepository.save(product);
         log.info("Product Created");
         return product.getProductId();
+    }
+
+    @Override
+    public ProductResponse getProductById(long productId) {
+        log.info("Get the product for productId: {}", productId);
+
+        Product product
+                = productRepository.findById(productId)
+                .orElseThrow(
+                        () -> new RuntimeException("Product with given id not found "));
+
+        ProductResponse productResponse
+                = new ProductResponse();
+
+        copyProperties(product, productResponse);
+
+        return productResponse;
     }
 }
