@@ -1,6 +1,7 @@
 package com.srhdp.OrderService.service;
 
 import com.srhdp.OrderService.entity.Order;
+import com.srhdp.OrderService.external.client.ProductService;
 import com.srhdp.OrderService.model.OrderRequest;
 import com.srhdp.OrderService.repository.OrderRepository;
 import lombok.extern.log4j.Log4j2;
@@ -14,6 +15,8 @@ import java.time.Instant;
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    private ProductService productService;
     @Override
     public long placeOrder(OrderRequest orderRequest) {
         //Order Entity -> Save the data with Status Order Created
@@ -22,6 +25,8 @@ public class OrderServiceImpl implements OrderService {
         //CANCELLED
 
         log.info("Placing Order Request: {}", orderRequest);
+        productService.reduceQuantity(orderRequest.getProductId(), orderRequest.getQuantity());
+
         log.info("Creating Order with Status CREATED");
         Order order = Order.builder()
                 .amount(orderRequest.getTotalAmount())
