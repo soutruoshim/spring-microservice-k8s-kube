@@ -98,6 +98,7 @@ public class OrderServiceImpl implements OrderService {
                 PaymentResponse.class
         );
 
+        assert productResponse != null;
         OrderResponse.ProductDetails productDetails
                 = OrderResponse.ProductDetails
                 .builder()
@@ -105,6 +106,7 @@ public class OrderServiceImpl implements OrderService {
                 .productId(productResponse.getProductId())
                 .build();
 
+        assert paymentResponse != null;
         OrderResponse.PaymentDetails paymentDetails
                 = OrderResponse.PaymentDetails
                 .builder()
