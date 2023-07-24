@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.srhdp</groupId>
 	<artifactId>service-registry</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-registry</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -54,6 +54,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<from>
+						<image>openjdk:17</image>
+					</from>
+					<to>
+						<image>registry.hub.docker.com/soutrahim/serviceregistry</image>
+						<tags>${project.version}</tags>
+					</to>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
