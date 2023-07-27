@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.srhdp</groupId>
 	<artifactId>OrderService</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>OrderService</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -70,12 +70,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>com.srhdp</groupId>
-            <artifactId>ProductService</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
 		<dependency>
 			<groupId>com.github.tomakehurst</groupId>
 			<artifactId>wiremock-jre8</artifactId>
@@ -114,6 +108,19 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<from>
+						<image>openjdk:17</image>
+					</from>
+					<to>
+						<image>registry.hub.docker.com/soutrahim/orderservice</image>
+						<tags>${project.version}</tags>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>
