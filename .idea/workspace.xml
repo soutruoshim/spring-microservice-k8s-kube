@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6160d26-8ff5-4645-8a97-1e6861338d10" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CloudGateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CloudGateway/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d6160d26-8ff5-4645-8a97-1e6861338d10" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +17,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/srhdp/Documents/spring/spring-microservice-k8s-kube"
+    "last_opened_file_path": "/Users/macmini/Documents/spring_project/spring-microservice-k8s-kube"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
