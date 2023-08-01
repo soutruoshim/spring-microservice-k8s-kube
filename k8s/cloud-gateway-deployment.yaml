@@ -13,22 +13,22 @@ spec:
     spec:
       containers:
       - name: cloud-gateway-app
-        image: soutrahim/cloudegateway
+        image: soutrahim/cloudgateway
         imagePullPolicy: Always
         ports:
         - containerPort: 9090
         env:
-          - name: EUREKA_SERVER_ADDRESS
-            valueFrom:
-              configMapKeyRef:
-                name: eureka-cm
-                key: eureka_service_address
           - name: CONFIG_SERVER_URL
             valueFrom:
               configMapKeyRef:
                 name: config-cm
                 key: config_url
-              
+          - name: EUREKA_SERVER_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: eureka-cm
+                key: eureka_service_address
+                
 ---
 
 apiVersion: v1

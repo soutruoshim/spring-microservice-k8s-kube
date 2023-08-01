@@ -16,6 +16,7 @@ spec:
       containers:
       - name: eureka
         image: soutrahim/serviceregistry
+        imagePullPolicy: Always
         ports:
         - containerPort: 8761
 

@@ -119,7 +119,7 @@
 						<image>openjdk:17</image>
 					</from>
 					<to>
-						<image>registry.hub.docker.com/soutrahim/cloudegateway</image>
+						<image>registry.hub.docker.com/soutrahim/cloudgateway</image>
 						<tags>${project.version}</tags>
 					</to>
 				</configuration>

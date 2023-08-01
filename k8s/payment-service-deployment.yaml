@@ -13,16 +13,11 @@ spec:
     spec:
       containers:
       - name: payment-service-app
-        image: dailycodebuffer/paymentservice
+        image: soutrahim/paymentservice
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
         env:
-        - name: EUREKA_SERVER_ADDRESS
-          valueFrom:
-            configMapKeyRef:
-              name: eureka-cm
-              key: eureka_service_address
         - name: CONFIG_SERVER_URL
           valueFrom:
             configMapKeyRef:
@@ -33,6 +28,11 @@ spec:
             configMapKeyRef:
               name: mysql-cm
               key: hostname
+        - name: EUREKA_SERVER_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: eureka-cm
+              key: eureka_service_address
 
 ---
 

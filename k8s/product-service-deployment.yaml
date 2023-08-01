@@ -16,7 +16,7 @@ spec:
         image: soutrahim/productservice
         imagePullPolicy: Always
         ports:
-        - containerPort: 8082
+        - containerPort: 8080
         env:
         - name: CONFIG_SERVER_URL
           valueFrom:
@@ -45,4 +45,4 @@ spec:
     app: product-service-app
   ports:
   - port: 80
-    targetPort: 8082
+    targetPort: 8080
